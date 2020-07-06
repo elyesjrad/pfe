@@ -28,6 +28,10 @@
         $admin = new authentication($db_config);
         $product = new product($db_config);
         $cat = new categorie($db_config)  ;
+        if(!$admin->is_loggedin())
+        {
+            $admin->redirect("login.php") ;
+        }
     ?>
 </head>
 
